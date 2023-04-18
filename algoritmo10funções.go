@@ -1,4 +1,3 @@
-ALGORITMO INCOMPLETO
 package main
 
 import (
@@ -13,41 +12,19 @@ func sliceCrescente(x []int) ([]int, error) {
 
 	}
 
-	idxMenor := 0
-	y := []int{}
-	menor := x[0]
-	i := 0
+	for i := 0; i < len(x); i++ {
 
-	for len(x) >= 2 {
+		for j := 0; j < len(x); j++ {
 
-		for i = 0; len(x) > i && len(x) != 0; i++ {
+			if x[j] > x[i] {
 
-			if x[i] < menor {
-
-				menor = x[i]
-				idxMenor = i
+				x[j], x[i] = x[i], x[j]
 
 			}
-
 		}
-
-		y = append(y, menor)
-
-		if idxMenor == len(x)-1 {
-			x = append(x[:idxMenor])
-		} else if idxMenor == 0 {
-			x = append(x[idxMenor+1:])
-		} else {
-			x = append(x[:idxMenor], x[idxMenor+1:]...)
-		}
-
-		i = 0
-		menor = x[0]
-
 	}
 
-	return y, nil
-
+	return x, nil
 }
 
 func main() {

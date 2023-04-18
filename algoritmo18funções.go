@@ -1,5 +1,3 @@
-ALGORITMO INCOMPLETO
-
 package main
 
 import (
@@ -22,14 +20,4 @@ func aplicarFuncEmIntSlice(x []int, y func(int) (int, error)) (int, error) {
 
 	return funcRanX, nil
 
-}
-
-func main() {
-	x := []int{232, 23, 111, 1234}
-	y := []int{}
-
-	fmt.Printf("Sua função aplicada em %d é: ", x)
-	fmt.Println(aplicarFuncEmIntSlice(x, somaAlgarismos))
-	fmt.Printf("Sua função aplicada em %d é: ", y)
-	fmt.Println(aplicarFuncEmIntSlice(y, somaAlgarismos))
 }

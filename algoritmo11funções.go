@@ -14,7 +14,6 @@ func primo(x int) (bool, error) {
 	if x == 1 || x == 0 {
 
 		primoBool = false
-
 	}
 
 	for i = 2; i < x; i++ {
